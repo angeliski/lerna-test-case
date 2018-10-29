@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "prebuild": "lerna exec --parallel -- rimraf lib",
+    "build": "lerna exec --parallel -- babel src -d lib --config-file ../../.babelrc",
+    "watch": "lerna exec --parallel -- babel src -d lib --config-file ../../.babelrc -w"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "lerna": "^3.4.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "rimraf": "^2.6.2"
+  }
+}
